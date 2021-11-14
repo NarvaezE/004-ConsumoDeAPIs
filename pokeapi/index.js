@@ -11,9 +11,7 @@ async function agregarPokemon(){
         alert("Agregue un valor valido al input");
         return;
     }else{
-    try{
-        
-            
+        try{ 
             const respuesta = await fetch(`${link}${buscadorPokemon.value.toLocaleLowerCase()}`);
             const infoPokemon = await respuesta.json();
 
@@ -58,14 +56,10 @@ async function agregarPokemon(){
             container.classList.add('container');
             arreglo.push(container);
             contenedor.append(...arreglo);
-
-            
-            
-        
-    }catch(error){
-        alert("Este pokemon no existe, vuelva a intentarlo")
+        }catch(error){
+            alert("Este pokemon no existe, vuelva a intentarlo")
+        }
     }
-}
     buscadorPokemon.value = "";
 
 }
